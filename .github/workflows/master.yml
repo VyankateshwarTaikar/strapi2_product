@@ -54,14 +54,14 @@ jobs:
 
       - name: Deploy to server
         env:
-          HOST: ${{ secrets.SERVER_HOST }}
-          USERNAME: ${{ secrets.SERVER_USER }}
-          SSH_PRIVATE_KEY: ${{ secrets.SERVER_KEY }}
+          SERVER_HOST: ${{ secrets.SERVER_HOST }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
+          SERVER_KEY: ${{ secrets.SERVER_KEY }}
         run: |
           ssh -i key.pem -o StrictHostKeyChecking=no ${SERVER_USER}@${SERVER_HOST} '
-          cd ~/my-strapi-project &&
-          git pull origin master &&
-          yarn install &&
-          yarn build &&
-          pm2 restart npm --name "strapi" -- run start
-     
+            cd ~/my-strapi-project &&
+            git pull origin master &&
+            yarn install &&
+            yarn build &&
+            pm2 restart npm --name "strapi" -- run start
+          '
