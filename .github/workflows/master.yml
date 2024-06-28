@@ -58,11 +58,11 @@ jobs:
           SERVER_USER: ${{ secrets.SERVER_USER }}
           SERVER_KEY: ${{ secrets.SERVER_KEY }}
         run: |
-          ssh -i key.pem -o StrictHostKeyChecking=no ${SERVER_USER}@${SERVER_HOST} <<'EOF'
+          ssh -i key.pem -o StrictHostKeyChecking=no ${SERVER_USER}@${SERVER_HOST} "
             cd ~/strapi &&
             git pull origin master &&
             yarn install &&
             yarn build &&
             pm2 delete strapi || true &&
-            pm2 start yarn --name "strapi" -- start
-EOF
+            pm2 start npm --name 'strapi' -- run start
+          "
