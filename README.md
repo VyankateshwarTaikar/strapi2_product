@@ -4,7 +4,9 @@ Strapi comes with a full featured [Command Line Interface](https://docs.strapi.i
 
  🌠𝐅𝐨𝐫𝐤 𝐭𝐡𝐢𝐬 𝐑𝐞𝐩𝐨 𝐚𝐧𝐝 𝐌𝐚𝐫𝐤 𝐚𝐬 𝐒𝐭𝐚𝐫 🌟 
 
- 🔗 [https://github.com/VyankateshwarTaikar/strapi.git](https://github.com/VyankateshwarTaikar/strapi2_product.git)
+ 🔗 [https://github.com/VyankateshwarTaikar/strapi.git]
+ 
+ (https://github.com/VyankateshwarTaikar/strapi2_product.git)
  
 
 ## Prerequisites to Install Strapi
@@ -42,6 +44,7 @@ curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 sudo apt install -y nodejs
 
 ## If npm is not the correct version, upgrade it:
+
 sudo npm install -g npm@10.7.0
 
 npm -v  # Should return 10.7.0
@@ -73,12 +76,14 @@ yarn -v  # Should return 1.22.22      (optional)
 
 ![image](https://github.com/VyankateshwarTaikar/strapi/assets/102132721/e2badbe1-9231-4bf5-8b9d-6218254f7264) 
 
-# 🌟Install Strapi
+# 🌟Install Strapi 
+
 ## 1.Once the environment is complete, use the following instructions to begin installing Strapi and creating your first website:
 
 sudo npm install strapi@alpha -g
  
 sudo npm install pm2 -g 
+
 ## 2.Next, make a new Strapi folder/project and provide any name.
 
 cd ~
