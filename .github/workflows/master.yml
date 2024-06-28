@@ -59,7 +59,7 @@ jobs:
           SERVER_KEY: ${{ secrets.SERVER_KEY }}
         run: |
           ssh -i key.pem -o StrictHostKeyChecking=no ${SERVER_USER}@${SERVER_HOST} '
-            cd ~/my-strapi-project &&
+            cd ~/strapi &&
             git pull origin master &&
             yarn install &&
             yarn build &&
