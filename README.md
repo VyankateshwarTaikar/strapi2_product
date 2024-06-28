@@ -221,7 +221,8 @@ Creating a Personal Access Token (PAT) & put it as as a password (your_token).
 # Implement CI/CD using GitHub Actions. 
 
 master.yml
-''' 
+
+```
 
 name: CI/CD for Strapi
 on:
@@ -273,7 +274,7 @@ jobs:
             #2>&1: This part redirects the standard error (stderr) to the same location as the standard output (stdout). 
             #In this case, both stdout and stderr are written to strapi.log.  & means process run in backgound
 
-'''
+```
 
 
 ------------------------------------------------------------------
