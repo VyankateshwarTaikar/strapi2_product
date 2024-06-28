@@ -1,36 +1,37 @@
-# This is a CI/CD workflow for deploying a Strapi application
-
-name: CI/CD for Strapi
-
-# Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the "master" branch
+name: Deploy Strapi
+'on':
   push:
-    branches: [ "master" ]
+    branches:
+      - master
   pull_request:
-    branches: [ "master" ]
-
+    branches:
+      - master
 jobs:
-  deploy:
-    name: Deploy to Server
+  build-and-deploy:
+    environment: DEV
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 20.x
+      - name: Install dependencies
+        run: npm install -g yarn
       - name: Prepare SSH Key
         run: |
-          echo "${{ secrets.SERVER_KEY }}" > key.pem
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > key.pem
           chmod 600 key.pem
-
-      - name: Deploy Strapi Application
+      - name: Deploy to server
         env:
-          SERVER_HOST: ${{ secrets.SERVER_HOST }}
-          SERVER_USER: ${{ secrets.SERVER_USER }}
-          SERVER_KEY: ${{ secrets.SERVER_KEY }}
-        run: |
-          ssh -i key.pem -o StrictHostKeyChecking=no ${SERVER_USER}@${SERVER_HOST} "
+          HOST: '${{ secrets.HOST }}'
+          USERNAME: '${{ secrets.USERNAME }}'
+          SSH_PRIVATE_KEY: '${{ secrets.SSH_PRIVATE_KEY }}'
+          ENV_VARS: '${{ secrets.ENV_VARS }}'
+        run: >
+          ssh -i key.pem -o StrictHostKeyChecking=no
+          ${SERVER_USER}@${SERVER_HOST} "
             cd ~/strapi &&
             git pull origin master &&
             npm install &&
