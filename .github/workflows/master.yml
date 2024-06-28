@@ -49,20 +49,19 @@ jobs:
 
       - name: Prepare SSH Key
         run: |
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > key.pem
+          echo "${{ secrets.SERVER_KEY }}" > key.pem
           chmod 600 key.pem
 
       - name: Deploy to server
         env:
-          SERVER_HOST: ${{ secrets.SERVER_HOST }}
-          SERVER_USER: ${{ secrets.SERVER_USER }}
-          SERVER_KEY: ${{ secrets.SERVER_KEY }}
+          HOST: ${{ secrets.SERVER_HOST }}
+          USERNAME: ${{ secrets.SERVER_USER }}
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_KEY }}
         run: |
-          ssh -i key.pem -o StrictHostKeyChecking=no ${SERVER_USER}@${SERVER_HOST} '
+          ssh -i key.pem -o StrictHostKeyChecking=no ${USERNAME}@${HOST} '
           cd ~/my-strapi-project &&
           git pull origin master &&
           yarn install &&
           yarn build &&
           pm2 restart npm --name "strapi" -- run start
-          '
-
+     
