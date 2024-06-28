@@ -4,9 +4,7 @@ Strapi comes with a full featured [Command Line Interface](https://docs.strapi.i
 
  🌠𝐅𝐨𝐫𝐤 𝐭𝐡𝐢𝐬 𝐑𝐞𝐩𝐨 𝐚𝐧𝐝 𝐌𝐚𝐫𝐤 𝐚𝐬 𝐒𝐭𝐚𝐫 🌟 
 
- 🔗 [https://github.com/VyankateshwarTaikar/strapi.git]
- 
- (https://github.com/VyankateshwarTaikar/strapi2_product.git)
+ 🔗(https://github.com/VyankateshwarTaikar/strapi2_product.git)
  
 
 ## Prerequisites to Install Strapi
@@ -159,7 +157,7 @@ choose 𝐬𝐤𝐢𝐩 and processed for the manual installation
 
 
 
-## note: If you are already done with installation then you can run where the project is crearted or project is stopped ( Not Recommeded in Production Enviroment )
+## note: 👇 If you are already done with installation then you can run where the project is crearted or project is stopped ( Not Recommeded in Production Enviroment )
 
 inside project diretory run command 
 
