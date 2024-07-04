@@ -44,7 +44,7 @@ jobs:
             pm2 stop strapi || true
             nohup npm start > strapi.log 2>&1 &   
             
-            # no hang up(process to continue running even after the user has logged out),
+            # no hang up(process to continue running even after the user has logged out).
             #2>&1: This part redirects the standard error (stderr) to the same location as the standard output (stdout). 
             #In this case, both stdout and stderr are written to strapi.log.  & means process run in backgound
 
