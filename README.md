@@ -43,9 +43,9 @@ sudo apt install -y nodejs
 
 ## If npm is not the correct version, upgrade it:
 
-sudo npm install -g npm@10.7.0
+sudo npm install -g npm@10.8.1
 
-npm -v  # Should return 10.7.0
+npm -v  # Should return 10.8.1
 
 
 ## Install Yarn:
